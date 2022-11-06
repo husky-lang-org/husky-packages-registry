@@ -1,13 +1,13 @@
 <header local-class="header {{if @hero "hero"}}">
   <div local-class="header-inner">
     <LinkTo @route="index" local-class="index-link">
-      <img src="/assets/Cargo-Logo-Small.png" role="presentation" alt="" local-class="logo">
-      <h1>crates.io</h1>
+      <img src="/assets/Husky-Logo-Small.jpeg" role="presentation" alt="" local-class="logo">
+      <h1>husky-packages.io</h1>
     </LinkTo>
 
     <div local-class="search-form">
       <h1 local-class="hero-title">
-        The Rust community&rsquo;s crate registry
+        The Husky community&rsquo;s package registry
       </h1>
 
       <SearchForm @size={{if @hero "big"}} />
@@ -15,7 +15,7 @@
 
     <nav local-class='nav'>
       <LinkTo @route="crates" @query={{hash letter=null page=1}} data-test-all-crates-link>
-        Browse All Crates
+        Browse All Packages
       </LinkTo>
       <span local-class="sep">|</span>
       {{#if this.session.currentUser}}

@@ -91,6 +91,7 @@ export default class SessionService extends Service {
     let response = await fetch(`/api/private/session/authorize?code=${code}&state=${state}`);
     if (!response.ok) {
       let json = await response.json();
+      console.log(json);
 
       if (json && json.errors) {
         this.notifications.error(`Failed to log in: ${json.errors[0].detail}`);

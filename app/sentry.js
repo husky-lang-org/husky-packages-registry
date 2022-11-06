@@ -11,8 +11,8 @@ export function init() {
     integrations.push(new Ember());
   }
 
-  let isProd = location.hostname === 'crates.io';
-  let isStaging = location.hostname === 'staging.crates.io';
+  let isProd = location.hostname === 'husky-packages.io';
+  let isStaging = location.hostname === 'staging.husky-packages.io';
   let environment = isProd ? 'production' : isStaging ? 'staging' : 'unknown';
 
   Sentry.init({
@@ -20,7 +20,12 @@ export function init() {
     ...config.sentry,
     integrations,
 
-    allowUrls: ['crates.io', 'crates-io.herokuapp.com', 'staging.crates-io', 'staging-crates-io.herokuapp.com'],
+    allowUrls: [
+      'husky-packages.io',
+      'husky-packages-io.herokuapp.com',
+      'staging.husky-packages-io',
+      'staging-husky-packages-io.herokuapp.com',
+    ],
 
     beforeSend(event, hint) {
       let error = hint?.originalException;

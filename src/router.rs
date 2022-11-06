@@ -167,6 +167,8 @@ pub fn build_router(app: &App) -> RouteBuilder {
         router.post("/git/index/*path", R(s));
     }
 
+    router.get("/", conduit_static::Static::new("dist"));
+
     router
 }
 
